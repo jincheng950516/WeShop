@@ -13,8 +13,6 @@ namespace Shop.Model
         public Sort()
         {
             ProSort = new HashSet<ProSort>();
-            ProSort1 = new HashSet<ProSort>();
-            ProSort2 = new HashSet<ProSort>();
         }
 
         [Key]
@@ -29,11 +27,5 @@ namespace Shop.Model
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProSort> ProSort { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProSort> ProSort1 { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProSort> ProSort2 { get; set; }
     }
 }

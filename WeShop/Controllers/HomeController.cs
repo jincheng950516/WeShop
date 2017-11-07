@@ -14,6 +14,7 @@ namespace WeShop.Controllers
     {
         public IBannerService BannerService { get; set; }
         public IProductService ProductService { get; set; }
+        public INoticeService NoticeService { get; set; }
         // GET: Home
         /// <summary>
         /// 首页数据查询
@@ -25,8 +26,13 @@ namespace WeShop.Controllers
             //ui层，不能直接实例化BLL，应该利用IBLL
             var BannerResult = BannerService.GetEntities(x => true);
             ViewBag.Banner = BannerResult.ToList();
-            var Productresult = ProductService.GetEntities(x => true)/*.OrderByDescending(x => x.Time).Take(3)*/;
+            //产品查询
+            var Productresult = ProductService.GetEntities(x => true).OrderByDescending(x => x.Time).Take(3);
             ViewBag.Product = Productresult.ToList();
+            //通知查询
+            var NoticeResult = NoticeService.GetEntities(x => true);
+            ViewBag.Notice = NoticeResult.ToList();
+
             return View();
         }
         //搜索

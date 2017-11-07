@@ -82,10 +82,6 @@ namespace Shop.Model
                 .WithRequired(e => e.Payment);
 
             modelBuilder.Entity<Product>()
-                .Property(e => e.price)
-                .HasPrecision(19, 4);
-
-            modelBuilder.Entity<Product>()
                 .HasMany(e => e.OrderBillChi)
                 .WithRequired(e => e.Product)
                 .HasForeignKey(e => e.Code)
@@ -97,9 +93,9 @@ namespace Shop.Model
                 .HasForeignKey(e => e.procode)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Product>()
-                .HasOptional(e => e.Product1)
-                .WithRequired(e => e.Product2);
+            //modelBuilder.Entity<Product>()
+            //    .HasOptional(e => e.Product1)
+            //    .WithRequired(e => e.Product2);
 
             modelBuilder.Entity<Product>()
                 .HasMany(e => e.ProPhoto)
@@ -162,19 +158,6 @@ namespace Shop.Model
             modelBuilder.Entity<Sort>()
                 .HasMany(e => e.ProSort)
                 .WithRequired(e => e.Sort)
-                .HasForeignKey(e => e.SortCode)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Sort>()
-                .HasMany(e => e.ProSort1)
-                .WithRequired(e => e.Sort1)
-                .HasForeignKey(e => e.ProCode)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Sort>()
-                .HasMany(e => e.ProSort2)
-                .WithRequired(e => e.Sort2)
-                .HasForeignKey(e => e.ProCode)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Tag>()

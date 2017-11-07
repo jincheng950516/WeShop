@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layout.cshtml";
+}
+
+<!DOCTYPE html>
+@using Shop.Model;
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <!--ftop开始-->
+    <div class="ftop">
+        <div class="index_search index_search01">
+            <a class="back" onClick="javascript:history.back(-1);"><img src="images/icon_03.png"></a>
+            <div>
+                <input type="text" placeholder="请输入您要搜索的产品">
+                <input class="dw" onclick="document.location='search_list.html'" type="button" value=" ">
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <!--ftop开始-->
+    <div class="search_list">
+        <p><a class="on"><span>综合</span></a><a><span>销量</span></a><a><span>评价</span></a><a><span class="bg">价格</span></a></p>
+        <ul>
+            @foreach (Product item in ViewBag.Product)
+            {
+                <li>
+                    <a href="product_xq.html">
+                        <img src="~/images/@item.Image">
+                        <div class="search_item">                         
+                                <p>@item.Name</p>
+                                <h2><i>￥</i><b>@item.price</b><span>@item.contents</span></h2>
+                        </div>
+                    </a>
+                </li>
+            }
+            @*<li>
+        <a href="product_xq.html">
+            <img src="images/img_010.jpg">
+            <div class="search_item">
+                <p>云南特级冬虫夏草云南特级冬虫夏草</p>
+                <h2><i>￥</i><b>185.00</b><span>月销18252笔</span></h2>
+            </div>
+        </a>
+    </li>*@
+        </ul>
+    </div>
+    <script>
+    $(".search_list ul li a img").each(function(){
+        var w = $(this).width();
+        $(this).height(w+"px");
+    })
+
+    </script>
+
+
+</body>
+</html>

@@ -19,12 +19,17 @@ namespace Shop.Model
         [StringLength(50)]
         public string ProCode { get; set; }
 
+        [StringLength(50)]
+        public string Pname { get; set; }
+
+        [StringLength(50)]
+        public string Pimg { get; set; }
+
+        [StringLength(50)]
+        public string Pcontent { get; set; }
+
         public virtual Product Product { get; set; }
 
         public virtual Sort Sort { get; set; }
-
-        public virtual Sort Sort1 { get; set; }
-
-        public virtual Sort Sort2 { get; set; }
     }
 }

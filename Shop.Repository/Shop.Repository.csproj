@@ -52,8 +52,11 @@
     <Compile Include="BannerRepository.cs" />
     <Compile Include="BaseRepository.cs" />
     <Compile Include="DbContextFactory.cs" />
+    <Compile Include="NoticeRepository.cs" />
     <Compile Include="ProductRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProSortRepository.cs" />
+    <Compile Include="SortRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Shop.IRepository\Shop.IRepository.csproj">
@@ -61,7 +64,7 @@
       <Name>Shop.IRepository</Name>
     </ProjectReference>
     <ProjectReference Include="..\Shop.Model\Shop.Model.csproj">
-      <Project>{A236E8CD-8D78-4AB8-9058-F853CD1F6928}</Project>
+      <Project>{df45dd96-581f-470e-ab0d-18ef24a472fa}</Project>
       <Name>Shop.Model</Name>
     </ProjectReference>
   </ItemGroup>

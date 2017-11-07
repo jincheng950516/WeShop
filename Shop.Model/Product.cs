@@ -38,8 +38,8 @@ namespace Shop.Model
         [StringLength(50)]
         public string describe { get; set; }
 
-        [Column(TypeName = "money")]
-        public decimal? price { get; set; }
+        [StringLength(50)]
+        public string price { get; set; }
 
         [StringLength(50)]
         public string contents { get; set; }
@@ -58,9 +58,9 @@ namespace Shop.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderBillChi> OrderBillChi1 { get; set; }
 
-        public virtual Product Product1 { get; set; }
+        //public virtual Product Product1 { get; set; }
 
-        public virtual Product Product2 { get; set; }
+        //public virtual Product Product2 { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProPhoto> ProPhoto { get; set; }

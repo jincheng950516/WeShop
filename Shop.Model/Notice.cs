@@ -20,6 +20,7 @@ namespace Shop.Model
 
         public int? PostUserId { get; set; }
 
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime ModiTime { get; set; }
     }
 }

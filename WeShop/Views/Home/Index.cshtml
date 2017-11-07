@@ -14,7 +14,7 @@
     <meta name="description" content="Free Web tutorials">
     <meta name="keywords" content="HTML,CSS,JavaScript">
     <meta content="telephone=no" name="format-detection">
-    <title>友意健康</title>
+    <title>老凤祥珠宝</title>
     @*<link href="css/Cbase.css" type="text/css" rel="stylesheet">*@
     <link href="~/css/Cbase.css" rel="stylesheet" />
     @*<link href="css/index.css" type="text/css" rel="stylesheet">*@
@@ -68,12 +68,19 @@
     </script>
     <!--banner over-->
     <div class="index_knowledge">
-        <img src="images/icon_0902.png">
+        <img src="~/images/gonggao.png">
         <div class="swiper-container dlist">
             <div class="swiper-wrapper">
-                <a class="swiper-slide" href="gonggao_xq.html"><i>最新</i>one冬虫夏草又名虫草，是我国民间惯用的一种名贵滋补...</a>
+                @foreach (Notice item in ViewBag.Notice as List<Notice>)
+                {
+                    <a class="swiper-slide" href="gonggao_xq.html">
+                        <i>@item.Title</i>
+                        @item.Body
+                    </a>                          
+                }
+                @*<a class="swiper-slide" href="gonggao_xq.html"><i>最新</i>one冬虫夏草又名虫草，是我国民间惯用的一种名贵滋补...</a>
                 <a class="swiper-slide" href="gonggao_xq.html"><i>最热</i>two冬虫夏草又名虫草，是我国民间惯用的一种名贵滋补...</a>
-                <a class="swiper-slide" href="gonggao_xq.html"><i>最新</i>three冬虫夏草又名虫草，是我国民间惯用的一种名贵滋补...</a>
+                <a class="swiper-slide" href="gonggao_xq.html"><i>最新</i>three冬虫夏草又名虫草，是我国民间惯用的一种名贵滋补...</a>*@
             </div>
         </div>
     </div>
@@ -101,7 +108,7 @@
                     </h3>
                 </div>
             </li>*@
-            @foreach (Product item in ViewBag.Product as List<Product>)
+            @foreach (Product item in ViewBag.Product)
         {
             <li>
                 <a href="product_xq.html"><img src="~/images/@item.Image"></a>
@@ -118,7 +125,7 @@
                 </div>
             </li>
         }
-            <li>
+            @*<li>
                 <a href="product_xq.html"><img src="images/index_img02.jpg"></a>
                 <div class="product_text">
                     <h2>
@@ -145,15 +152,16 @@
                         <a href="product_xq.html">立即购买</a>
                     </h3>
                 </div>
-            </li>
+            </li>*@
         </ul>
     </div>
     <div class="index_icon">
         <p>
-            <span><img src="images/icon_01.png"><i>品质保证</i></span>
-            <span><img src="images/icon_02.png"><i>送货保障</i></span>
-            <span><img src="images/icon_003.png"><i>7天包换</i></span>
-            <span><img src="images/icon_04.png"><i>质量保障</i></span>
+          
+            <span><img src="~/images/icon_01.png" /><i>品质保证</i></span>
+            <span><img src="~/images/icon_02.png"><i>送货保障</i></span>
+            <span><img src="~/images/icon_003.png"><i>7天包换</i></span>
+            <span><img src="~/images/icon_04.png"><i>质量保障</i></span>
         </p>
     </div>
 </body>
